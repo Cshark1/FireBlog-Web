@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/open-sans";
+
+@layer components{
+    .logo-image{
+        @apply flex flex-row align-middle items-center gap-4 text-4xl
+    }
+    .container{
+        @apply px-12 pt-4
+    }
+}
