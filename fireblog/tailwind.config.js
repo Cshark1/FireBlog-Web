@@ -5,15 +5,15 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'media',
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-
+        'facebook': '#1877F2',
       },
       fontFamily:{
-        'roboto': ['roboto', 'open-sans', 'sans-serif']
-      }
+        'roboto': ['roboto', 'open-sans', 'sans-serif'],
+      },
     },
   },
   plugins: [],

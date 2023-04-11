@@ -1,8 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "@fontsource/roboto/400.css";
-@import "@fontsource/open-sans";
+
+.top {
+    clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 50px));
+}
+.bottom {
+    clip-path: polygon(0 0,100% 50px,100% 100%,0 100%);
+    margin-top: -40px;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.text-field{
+    outline: none;
+}
 
 @layer components{
     .logo-image{
@@ -10,5 +30,31 @@
     }
     .container{
         @apply px-12 pt-4
+    }
+    .social-button{
+        @apply h-10 w-72 rounded-lg flex items-center drop-shadow-md hover:shadow-inner hover:scale-[102%] transition-all
+            cursor-pointer ease-out duration-200
+    }
+    .label{
+        @apply text-right text-lg
+    }
+    .form-button{
+        @apply text-lg w-28 bg-purple-600 text-amber-50 rounded-lg font-bold tracking-wider drop-shadow-md cursor-pointer
+            hover:shadow-inner hover:bg-purple-700 transition-all ease-out duration-200 h-10
+    }
+    .inverse-form-button{
+        @apply text-lg w-28 border-2 border-purple-600 text-purple-600 rounded-lg font-bold tracking-wider drop-shadow-md
+            cursor-pointer hover:shadow-inner hover:bg-purple-700 hover:border-purple-700
+            hover:text-amber-50 transition-all ease-out duration-200 h-10 leading-[36px] text-center
+    }
+    .form-container{
+        @apply flex flex-col gap-6
+    }
+    .text-field {
+        @apply border-b-[1px] border-gray-400 placeholder-gray-400 w-64 hover:border-gray-500 hover:placeholder-gray-500
+            focus:border-gray-800 focus:placeholder-gray-800 focus:scale-105 transition-all duration-200 ease-in-out
+    }
+    .button-wrapper{
+        @apply flex justify-between w-full
     }
 }
